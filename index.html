@@ -17,9 +17,20 @@
           verify: { projectID: '672e8bc4196fe62a2ad8dc7a' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production'
+        }).then(() => {
+          window.voiceflow.chat.proactive.clear(); // clear all previous messages
+          window.voiceflow.chat.proactive.push({ 
+            type: 'text', 
+            payload: { message: 'Are you interested in some 🔥🔥🔥 sneakers?' }
+          }, { 
+            type: 'text', 
+            payload: { message: 'Click on the chat to learn more!' }
+          });
         });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      };
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+      v.type = "text/javascript"; 
+      s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
     
