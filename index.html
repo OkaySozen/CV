@@ -18,18 +18,10 @@
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production'
         });
-
-        window.voiceflow.chat.proactive.push({
-          type: 'text', 
-          payload: { message: 'hello world' }
-        });
-      };
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
-      v.type = "text/javascript"; 
-      s.parentNode.insertBefore(v, s);
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
-    
     
 </body>
 
