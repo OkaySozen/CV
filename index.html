@@ -9,9 +9,7 @@
 
 <body style="background-color: #F3E7D6">
 
-    
-
-   <script type="text/javascript">
+<script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
@@ -20,11 +18,22 @@
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production'
         });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+
+        setTimeout(function() {
+          if (window.voiceflow && window.voiceflow.chat) {
+            window.voiceflow.chat.sendEvent({
+              type: "text",
+              payload: { text: "Hi there! Need any assistance today?" }
+            });
+          }
+        }, 5000);
+      };
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
-
+    
 </body>
 
 </html>
