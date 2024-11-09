@@ -18,14 +18,13 @@
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production'
         }).then(() => {
-          window.voiceflow.chat.proactive.clear(); // clear all previous messages
-          window.voiceflow.chat.proactive.push({ 
-            type: 'text', 
-            payload: { message: 'Are you interested in some 🔥🔥🔥 sneakers?' }
-          }, { 
-            type: 'text', 
-            payload: { message: 'Click on the chat to learn more!' }
-          });
+          setTimeout(() => {
+            window.voiceflow.chat.proactive.clear(); 
+            window.voiceflow.chat.proactive.push({ 
+              type: 'text', 
+              payload: { message: 'Need some help?' }
+            });
+          }, 5000); 
         });
       };
       v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
