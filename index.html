@@ -19,20 +19,17 @@
           versionID: 'production'
         });
 
-        setTimeout(function() {
-          if (window.voiceflow && window.voiceflow.chat) {
-            window.voiceflow.chat.sendEvent({
-              type: "text",
-              payload: { text: "Hi there! Need any assistance today?" }
-            });
-          }
-        }, 5000);
+        window.voiceflow.chat.proactive.push({
+          type: 'text', 
+          payload: { message: 'hello world' }
+        });
       };
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-      v.type = "text/javascript";
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+      v.type = "text/javascript"; 
       s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+    
     
 </body>
 
